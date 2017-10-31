@@ -1,0 +1,29 @@
+def answer(s):
+    # your code here
+    output = 0
+    ls = list(s)
+    length = len(ls)
+
+    exp = ls[0]
+    if (ls[0] * length == s):
+        return length
+
+    for x in range(1, length):
+        exp = exp + ls[x]
+
+        checker = s.split(exp)
+        cc = 0
+        for i in range(0, len(checker)):
+            if checker[i] == "":
+                cc = cc + 1;
+
+
+        if (cc != len(checker)):
+            cc = 0
+
+        if (output < cc ):
+
+            output = cc - 1
+
+
+    return output
